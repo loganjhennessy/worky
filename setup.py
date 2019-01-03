@@ -19,7 +19,7 @@ setup(
     packages=find_packages(exclude=['tests']),
     entry_points={
         'console_scripts': [
-            'wky=pywky.app.main:prog'
+            'pywky=pywky.app.main:prog'
         ]
     }
 )
