@@ -1,3 +1,18 @@
+# 2018-01-05
+
+What columns do I need?
+
+* id
+* name
+* nickname
+* directory
+* ide_exec
+
+I need an id and name, obviously. Maybe a shortcut or nickname. A directory,
+an IDE.
+
+Nice. Got a database up and running, hard-coded for now, but it works!
+
 # 2018-01-03
 
 I now have a working `pywky` script that uses the `click` library.

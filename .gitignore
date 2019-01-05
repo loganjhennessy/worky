@@ -6,6 +6,10 @@
 build/
 dist/
 env/
+__pycache__/
+
+# SQLite
+worky_dev.db
 
 # Temporary
 projects/
