@@ -1,6 +1,5 @@
 from click import argument, command, option
 
-from pywky.db import engine
 from pywky.db.models import Project
 from pywky.db.session import make_session
 
