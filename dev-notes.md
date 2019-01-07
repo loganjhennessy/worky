@@ -1,3 +1,29 @@
+# 2018-01-07
+
+Productive day. 
+
+Create is complete. Still need delete, list, and update.
+
+Now that I have more-or-less figured out the project layout and the
+technologies I want to use, I'm really just left with the fun part of
+implementing everything. And since I know what needs to be done and how to
+do it, I can write a pretty descriptive TODO list that should remain valid
+until I finish everything.
+
+To dos:
+* Implement list
+* Implement delete
+* Implement retrieve
+* Implement update
+* Setup configuration
+* Write tests
+* Write documentation
+* Write bash scripts
+* Publish via PyPi
+* Write a blog post introducing the app
+* Write a blog post on using and testing a SQLite database
+* Write a blog post on using and testing the Click library
+
 # 2018-01-05
 
 What columns do I need?
