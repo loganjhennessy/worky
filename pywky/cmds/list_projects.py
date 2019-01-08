@@ -1,16 +1,25 @@
-from click import command, option
+from click import command, echo, option
+
+from pywky.db.models import Project
+from pywky.db.session import make_session
 
 
 @command('list')
 @option(
-    '--show-inactive',
+    '-a',
+    '--show-all',
     is_flag=True,
     default=False,
-    help='Show inactive projects.'
+    help='Show all projects, including inactive.'
 )
-def list_projects(show_inactive):
+def list_projects(show_all):
     """List all projects.
 
+    \f
     By default, inactive projects are hidden.
     """
-    pass
+    session = make_session()
+    projects = session.query(Project).all()
+    echo(Project.repr_header())
+    for project in projects:
+        echo(project)

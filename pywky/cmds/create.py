@@ -17,7 +17,6 @@ def create(name, nickname, directory, ide_executable):
       NAME: Name for the project
 
     \f
-
     :param name: Name for the project
     :param nickname: Short name for the project
     :param directory: Where the project is located
@@ -28,7 +27,8 @@ def create(name, nickname, directory, ide_executable):
         name=name,
         nickname=nickname,
         directory=directory,
-        ide_exec=ide_executable
+        ide_exec=ide_executable,
+        active=True
     )
     session.add(project)
     session.commit()
