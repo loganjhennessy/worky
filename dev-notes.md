@@ -1,3 +1,20 @@
+# 2018-01-09
+
+To dos:
+* ~Implement list~
+* ~Implement delete~
+* Implement retrieve
+* Implement update
+* Implement unique name check on create
+* Setup configuration
+* Write tests
+* Write documentation
+* Write bash scripts
+* Publish via PyPi
+* Write a blog post introducing the app
+* Write a blog post on using and testing a SQLite database
+* Write a blog post on using and testing the Click library
+
 # 2018-01-07
 
 Productive day. 
@@ -11,8 +28,8 @@ do it, I can write a pretty descriptive TODO list that should remain valid
 until I finish everything.
 
 To dos:
-* ~Implement list~
-* ~Implement delete~
+* Implement list
+* Implement delete
 * Implement retrieve
 * Implement update
 * Implement unique name check on create
