@@ -28,7 +28,7 @@ def create(name, nickname, directory, ide_executable):
         nickname=nickname,
         directory=directory,
         ide_exec=ide_executable,
-        active=True
+        status='ACTIVE'
     )
     session.add(project)
     session.commit()

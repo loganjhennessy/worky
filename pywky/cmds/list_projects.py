@@ -12,7 +12,14 @@ from pywky.db.session import make_session
     default=False,
     help='Show all projects, including inactive.'
 )
-def list_projects(show_all):
+@option(
+    '-h',
+    '--show-headers',
+    is_flag=True,
+    default=False,
+    help='Hide header for the list, showing the data only.'
+)
+def list_projects(show_all, show_headers):
     """List all projects.
 
     \f
@@ -20,6 +27,9 @@ def list_projects(show_all):
     """
     session = make_session()
     projects = session.query(Project).all()
-    echo(Project.repr_header())
+
+    if show_headers:
+        echo(Project.repr_header())
+
     for project in projects:
         echo(project)
