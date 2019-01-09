@@ -11,10 +11,11 @@ do it, I can write a pretty descriptive TODO list that should remain valid
 until I finish everything.
 
 To dos:
-* Implement list
-* Implement delete
+* ~Implement list~
+* ~Implement delete~
 * Implement retrieve
 * Implement update
+* Implement unique name check on create
 * Setup configuration
 * Write tests
 * Write documentation
