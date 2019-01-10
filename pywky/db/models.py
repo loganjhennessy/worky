@@ -15,7 +15,9 @@ def generate_uuid():
 
 
 Base = declarative_base()
-fmtstr = '{:10}{:8}  {:>36}'
+fmtstr = '{:36}  {:10}  {:8}  {:60}  {:10}  {:8}'
+fmtstr_abbr = '{:10}{:8}  {:>36}'
+
 
 class Project(Base):
     __tablename__ = 'project'
@@ -27,8 +29,29 @@ class Project(Base):
     status = Column(Text)
 
     def __repr__(self):
-        return fmtstr.format(self.name, self.status, self.id)
+        return fmtstr.format(
+            self.id,
+            self.name,
+            self.nickname,
+            self.directory,
+            self.ide_exec,
+            self.status
+        )
+
+    def repr_abbr(self):
+        return fmtstr_abbr.format(self.name, self.status, self.id)
+
+    @staticmethod
+    def repr_abbr_header():
+        return fmtstr_abbr.format('Name', 'Status', 'Id')
 
     @staticmethod
     def repr_header():
-        return fmtstr.format('Name', 'Status', 'Id')
+        return fmtstr.format(
+            'Id',
+            'Name',
+            'Nickname',
+            'Directory',
+            'Ide Exec',
+            'Status'
+        )

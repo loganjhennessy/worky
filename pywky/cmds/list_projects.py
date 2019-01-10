@@ -14,12 +14,12 @@ from pywky.db.session import make_session
 )
 @option(
     '-h',
-    '--show-headers',
+    '--show-header',
     is_flag=True,
     default=False,
     help='Hide header for the list, showing the data only.'
 )
-def list_projects(show_all, show_headers):
+def list_projects(show_all, show_header):
     """List all projects.
 
     \f
@@ -28,8 +28,8 @@ def list_projects(show_all, show_headers):
     session = make_session()
     projects = session.query(Project).all()
 
-    if show_headers:
-        echo(Project.repr_header())
+    if show_header:
+        echo(Project.repr_abbr_header())
 
     for project in projects:
-        echo(project)
+        echo(project.repr_abbr())
