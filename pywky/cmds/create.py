@@ -1,4 +1,5 @@
-from click import argument, command, option
+from click import argument, command, echo, option
+from sqlalchemy.exc import IntegrityError
 
 from pywky.db.models import Project
 from pywky.db.session import make_session
@@ -30,5 +31,10 @@ def create(name, nickname, directory, ide_executable):
         ide_exec=ide_executable,
         status='ACTIVE'
     )
-    session.add(project)
-    session.commit()
+
+    try:
+        session.add(project)
+        session.commit()
+    except IntegrityError as e:
+        echo(f'Could not create a project with name: {name}')
+        echo('\n    A project with that name already exists.')

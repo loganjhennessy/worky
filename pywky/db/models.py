@@ -22,7 +22,7 @@ fmtstr_abbr = '{:10}{:8}  {:>36}'
 class Project(Base):
     __tablename__ = 'project'
     id = Column(Text, primary_key=True, default=generate_uuid())
-    name = Column(Text)
+    name = Column(Text, unique=True)
     nickname = Column(Text)
     directory = Column(Text)
     ide_exec = Column(Text)
