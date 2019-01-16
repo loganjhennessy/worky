@@ -8,9 +8,9 @@ from pywky.db.session import make_session
 @command()
 @argument('name')
 @option('-n', '--nickname')
-@option('-d', '--directory')
+@option('-r', '--repository')
 @option('-i', '--ide-executable')
-def create(name, nickname, directory, ide_executable):
+def create(name, nickname, repository, ide_executable):
     """Create a new project.
 
     \b
@@ -27,7 +27,7 @@ def create(name, nickname, directory, ide_executable):
     project = Project(
         name=name,
         nickname=nickname,
-        directory=directory,
+        repo=repository,
         ide_exec=ide_executable,
         status='ACTIVE'
     )

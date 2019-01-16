@@ -15,7 +15,17 @@ def generate_uuid():
 
 
 Base = declarative_base()
-fmtstr = '{:36}  {:10}  {:8}  {:60}  {:10}  {:8}'
+fmtstr = '''\
+Id:               {id}
+Name:             {name}
+Nickname:         {nickname}
+Repo:             {repo}
+Branch:           {branch}
+Ide Executable:   {ide_exec}
+Status:           {status}
+Scratch Dir:      {scratch_dir}
+Ticket:           {ticket}\
+'''
 fmtstr_abbr = '{:10}{:8}  {:>36}'
 
 
@@ -24,18 +34,24 @@ class Project(Base):
     id = Column(Text, primary_key=True, default=generate_uuid())
     name = Column(Text, unique=True)
     nickname = Column(Text)
-    directory = Column(Text)
+    repo = Column(Text)
     ide_exec = Column(Text)
     status = Column(Text)
+    scratch_dir = Column(Text)
+    ticket = Column(Text)
+    branch = Column(Text)
 
     def __repr__(self):
         return fmtstr.format(
-            self.id,
-            self.name,
-            self.nickname,
-            self.directory,
-            self.ide_exec,
-            self.status
+            id=self.id,
+            name=self.name,
+            nickname=self.nickname,
+            repo=self.repo,
+            branch=self.branch,
+            ide_exec=self.ide_exec,
+            status=self.status,
+            scratch_dir=self.scratch_dir,
+            ticket=self.ticket
         )
 
     def repr_abbr(self):
@@ -44,14 +60,3 @@ class Project(Base):
     @staticmethod
     def repr_abbr_header():
         return fmtstr_abbr.format('Name', 'Status', 'Id')
-
-    @staticmethod
-    def repr_header():
-        return fmtstr.format(
-            'Id',
-            'Name',
-            'Nickname',
-            'Directory',
-            'Ide Exec',
-            'Status'
-        )
