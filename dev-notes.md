@@ -1,3 +1,32 @@
+# 2018-01-11
+
+Stopped halfway through implementing 'update'.
+
+This is going to be challenging since I'll have to figure out what the user
+has passed in and only update those fields.
+
+To dos:
+* ~Implement list~
+* ~Implement delete~
+* ~Implement retrieve~
+* ~Implement unique name check on create~
+* ~Implement update~
+* ~Add a project scratch location ('scratch_dir')~
+* ~Change 'directory' to 'repo'~
+* ~Add a 'ticket' field~
+* ~Add a 'branch' field~
+* ~Update project printout to vertical instead of horizontal~
+* Write bash scripts
+* Write tests
+* Write documentation
+* Publish via PyPi
+* Write a blog post introducing the app
+* Write a blog post on using and testing a SQLite database
+* Write a blog post on using and testing the Click library
+* Setup configuration
+* Make it possible to change the name
+* Allow the nickname to be used to lookup a project
+
 # 2018-01-09
 
 To dos:
